@@ -13,33 +13,12 @@ var app = express();
 var indexRouter = require('./routes/index');
 var usersRouter = require ('./routes/users');
 
-//Connecting to mongoose
+//Set up mongoose connection
 var mongoose = require('mongoose');
-
-//Set up default mongoose connection
-var mongoDB = 'mongodb://127.0.0.1/my_database';
+var mongoDB = 'mongodb://<Marianne>:<ineedcoffee24>@ds061196.mlab.com:61196/local_library1';
 mongoose.connect(mongoDB);
-
-// Get Mongoose to use the global promise library
 mongoose.Promise = global.Promise;
-
-//Get the default connection
 var db = mongoose.connection;
-
-
-//Require Mongoose
-var mongoose = require('mongoose');
-
-//Define a schema
-var Schema = mongoose.Schema;
-
-var SomeModelSchema = new Schema({
-    a_string: String,
-    a_date: Date
-});
-
-
-//Bind connection to error event (to get notification of connection errors)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.set('views', path.join(__dirname, 'views'));
