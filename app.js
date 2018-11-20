@@ -12,6 +12,15 @@ var app = express();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require ('./routes/users');
+var catalogRouter = require('./routes/catalog');
+
+//Set up mongoose connection
+var mongoose = require('mongoose');
+var mongoDB = 'mongodb://<Marianne>:<ineedcoffee24>@ds061196.mlab.com:61196/local_library1';
+mongoose.connect(mongoDB);
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -24,7 +33,7 @@ app.set('view engine', 'jade');
 app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
