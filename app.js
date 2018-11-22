@@ -16,7 +16,10 @@ var catalogRouter = require('./routes/catalog');
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://<marianne>:<ineedcoffee24>@ds125331.mlab.com:25331/local_library1';
+var mongoDB = 'mongodb://marianne:ineedcoffee24@ds125331.mlab.com:25331/local_library1';
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://marianne:ineedcoffee24@ds125331.mlab.com:25331/local_library1', { useNewUrlParser: true });
+mongoose.set('useCreateIndex', true);
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;

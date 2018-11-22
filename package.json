@@ -17,5 +17,21 @@
   },
   "devDependencies": {
     "nodemon": "^1.18.6"
-  }
+  },
+  "description": "",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MetallicAquamarine/Local-Library-harjoitustyo.git"
+  },
+  "keywords": [
+    "PWWWO",
+    "locallibrary"
+  ],
+  "author": "Marianne Alanen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MetallicAquamarine/Local-Library-harjoitustyo/issues"
+  },
+  "homepage": "https://github.com/MetallicAquamarine/Local-Library-harjoitustyo#readme"
 }
